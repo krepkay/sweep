@@ -29,5 +29,11 @@
         ctrlextra { status = "reserved"; };
 
         system { status = "reserved"; };
+
+        extraone { status = "reserved"; };
+        
+        extratwo { status = "reserved"; };
+
+        extrathree { status = "reserved"; };
     };
 };
