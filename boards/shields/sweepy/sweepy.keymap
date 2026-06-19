@@ -5,18 +5,62 @@
 // Vars
 #define XXX &none
 #define ___ &trans
+
 #define QWERTY 0
 #define NAV 1
 #define NUM 2
 #define FUN 3
 #define WM 4
 
+#define COMBO_PRIOR_IDLE 50
+#define COMBO_TIMEOUT_MS 35
+
+// Functions
+#define COMBO(NAME, BINDINGS, KEYPOS, IDLE, MS) \
+    combo_##NAME { \
+        bindings = <BINDINGS>; \
+        key-positions = <KEYPOS>; \
+        require-prior-idle-ms = <IDLE>; \
+        timeout-ms = <MS>; \
+    };
+
 // Behavior configuration
+&lt {
+    tapping-term-ms = <200>;
+    quick_tap_ms = <0>;
+    flavor = "tap-preferred";
+};
+
+&mt {
+    tapping-term-ms = <200>;
+    quick_tap_ms = <0>;
+    flavor = "tap-preferred";
+};
+
+&sk {
+    release-after-ms = <500>;
+    quick-release;
+};
+
 &caps_word {
     continue-list = <UNDERSCORE MINUS BACKSPACE DELETE>;
 };
 
 / {
+    combos {
+        compatible = "zmk,combos";
+        COMBO(lout, &mo RARE,       1 2,  COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
+        COMBO(lpar, &kp LPAR,       3 4,  COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
+        COMBO(rpar, &kp RPAR,       7 8,  COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
+        COMBO(lbkt, &kp LBKT,       2 3,  COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
+        COMBO(rbkt, &kp RBKT,       8 9,  COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
+        COMBO(lbrc, &kp LBRC,       2 4,  COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
+        COMBO(rbrc, &kp RBRC,       7 9,  COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
+        COMBO(nwrd, &num_word NUM, 13 14, COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
+        COMBO(caps, &caps_word,    21 22, COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
+        COMBO(lang, &kp LG(SPACE), 37 40, COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
+    };
+
 	behaviors {
 		hm: homerow_mods {
 			compatible = "zmk,behavior-hold-tap";
@@ -27,45 +71,6 @@
 			flavor = "tap-preferred";
 			bindings = <&kp>, <&kp>;
 		};
-	};
-
-	combos {
-		compatible = "zmk,combos";
-			combo_minus {
-				timeout-ms = <100>;
-				key-positions = <13 16>;
-				bindings = <&kp MINUS>;
-			};
-			combo_quote {
-				timeout-ms = <100>;
-				key-positions = <12 17>;
-				bindings = <&kp SQT>;
-			};
-			combo_plus {
-				timeout-ms = <50>;
-				key-positions = <2 3>;
-				bindings = <&kp PLUS>;
-			};
-			combo_tmux {
-				timeout-ms = <60>;
-				key-positions = <16 33>;
-				bindings = <&kp LC(B)>;
-			};
-			combo_bkspace {
-				timeout-ms = <100>;
-				key-positions = <6 7>;
-				bindings = <&kp BSPC>;
-			};
-			combo_inc {
-				timeout-ms = <50>;
-				key-positions = <3 6>;
-				bindings = <&kp LG(PLUS) >;
-			};
-			combo_dec {
-				timeout-ms = <50>;
-				key-positions = <4 5>;
-				bindings = <&kp LG(MINUS) >;
-			};
 	};
 
     keymap {
@@ -105,6 +110,15 @@
 				&bt BT_SEL 2 XXX XXX XXX &bt BT_CLR_ALL   &studio_unlock XXX XXX XXX &bt BT_SEL 5
 									 XXX XXX              XXX            XXX
 			>;
+		};
+
+		wm {
+            bindings = <
+				___         &kp LG(Q)    &kp LG(W)    &kp LG(E)    &kp LG(R)      ___   ___         ___         ___        ___
+				&kp LG(A)   &kp LG(N1)   &kp LG(N2)   &kp LG(N3)   &kp LG(F)      ___   &kp LSHFT   &kp LCTRL   &kp LALT   &kp LGUI
+				&kp LG(X)   &kp LG(N4)   &kp LG(N5)   &kp LG(N6)   ___            ___   ___         ___         ___        ___
+				                                      ___          ___            ___   ___
+            >;
 		};
 
     };
