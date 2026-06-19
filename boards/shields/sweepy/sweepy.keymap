@@ -49,12 +49,13 @@
 / {
     combos {
         compatible = "zmk,combos";
-        COMBO(lpar, &kp LPAR,       2 3,  COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
-        COMBO(rpar, &kp RPAR,       6 7,  COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
-        COMBO(lbkt, &kp LBKT,       1 2,  COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
-        COMBO(rbkt, &kp RBKT,       7 8,  COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
-        COMBO(lbrc, &kp LBRC,       1 3,  COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
-        COMBO(rbrc, &kp RBRC,       6 8,  COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
+        COMBO(lpar, &kp LPAR,  2 3, COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
+        COMBO(rpar, &kp RPAR,  6 7, COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
+        COMBO(lbkt, &kp LBKT,  1 2, COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
+        COMBO(rbkt, &kp RBKT,  7 8, COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
+        COMBO(lbrc, &kp LBRC,  1 3, COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
+        COMBO(rbrc, &kp RBRC,  6 8, COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
+        COMBO(escp, &kp ESC, 16 17, COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
     };
 
 	behaviors {
