@@ -58,6 +58,7 @@
         COMBO(rbkt, &kp RBKT,  7 8, COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
         COMBO(rbrc, &kp RBRC,  6 8, COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
         COMBO(escp, &kp ESC, 16 17, COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
+        COMBO(escp, &kp ESC, 12 13, COMBO_PRIOR_IDLE, COMBO_TIMEOUT_MS)
     };
 
 	behaviors {
