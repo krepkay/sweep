@@ -10,11 +10,12 @@
 #define ___ &trans
 
 #define QWERTY 0
-#define NAV 1
-#define NUM 2
-#define FUN 3
-#define WM 4
-#define RARE 5
+#define COLEMAK 1
+#define NAV 2
+#define NUM 3
+#define FUN 4
+#define WM 5
+#define RARE 6
 
 #define COMBO_PRIOR_IDLE 50
 #define COMBO_TIMEOUT_MS 35
@@ -101,6 +102,15 @@
 			>;
 		};
 
+		colemak {
+			bindings = <
+				&kp Q      &kp W      &kp F       &kp P           &kp B           &kp J         &kp L       &kp U       &kp Y      &kp SQT
+				&hm LGUI A &hm LALT R &hm LCTRL S &hm LSHFT T     &kp G           &kp M         &hm RSHFT N &hm RCTRL E &hm RALT I &hm RGUI O
+				&kp Z      &kp X      &kp C       &kp D           &kp V           &kp K         &kp H       &kp COMMA   &kp DOT    &kp FSLH
+				                                  &lt NAV SPACE   &lt WM TAB      &lt FUN RET   &lt NUM BSPC
+			>;
+		};
+
 		navigation {
 			bindings = <
                 &kp LC(Z)   &kp LC(V)   &kp LC(C)   &kp LC(X)   &kp LC(Y)         &kp CAPSLOCK   &kp PG_DN   &kp UP     &kp PG_UP   &caps_word
@@ -139,10 +149,10 @@
 
 		rare {
 			bindings = <
-				XXX   XXX   &bt BT_SEL 3   &bt BT_SEL 0   &bootloader        &bootloader      XXX XXX XXX XXX
-				XXX   XXX   &bt BT_SEL 4   &bt BT_SEL 1   &sys_reset         &sys_reset       XXX XXX XXX XXX
-				XXX   XXX   &bt BT_SEL 5   &bt BT_SEL 2   &bt BT_CLR_ALL     &studio_unlock   XXX XXX XXX XXX
-						                   XXX            XXX                XXX              XXX
+				XXX   XXX   &bt BT_SEL 3   &bt BT_SEL 0   &bootloader        &bootloader      XXX   XXX   XXX   XXX
+				XXX   XXX   &bt BT_SEL 4   &bt BT_SEL 1   &sys_reset         &sys_reset       XXX   XXX   XXX   XXX
+				XXX   XXX   &bt BT_SEL 5   &bt BT_SEL 2   &bt BT_CLR_ALL     &studio_unlock   XXX   XXX   XXX   XXX
+						                   XXX            XXX                &to QWERTY	      &to COLEMAK
 			>;
 		};
 
