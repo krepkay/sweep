@@ -125,7 +125,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)   // Right-hand HRMs
 
 		colemak {
 			bindings = <
-				&kp Q        &kp W        &kp F         &kp P          &kp B           &kp J         &kp L         &kp U         &kp Y        &kp SQT
+				&kp Q        &kp W        &kp F         &kp P          &kp B           &kp J         &kp L         &kp U         &kp Y        &kp SEMI
 				&hml LGUI A  &hml LALT R  &hml LCTRL S  &hml LSHFT T   &kp G           &kp M         &hmr RSHFT N  &hmr RCTRL E  &hmr RALT I  &hmr RGUI O
 				&kp Z        &kp X        &kp C         &kp D          &kp V           &kp K         &kp H         &kp COMMA     &kp DOT      &kp FSLH
                                                         &lt NAV SPACE  &lt WM TAB      &lt FUN RET   &lt NUM BSPC
