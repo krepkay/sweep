@@ -136,7 +136,7 @@ MAKE_HRM(hmr, &kp, &kp, KEYS_L THUMBS)   // Right-hand HRMs
 			bindings = <
                 &kp LC(Z)    &kp LC(V)    &kp LC(C)     &kp LC(X)      &kp LC(Y)       &kp CAPSLOCK  &kp PG_DN     &kp UP        &kp PG_UP    &caps_word
                 &kp LGUI     &kp LALT     &kp LCTRL     &kp LSHFT      &kp PSCRN       &kp HOME      &kp LEFT      &kp DOWN      &kp RIGHT    &kp END
-                ___          ___          &kp DEL       &kp RET        &kp BSPC        &kp INS       ___           ___           ___          &num_word
+                ___          ___          &kp DEL       &kp RET        &kp BSPC        &kp INS       ___           ___           ___          &num_word NUM
                                                         ___            ___             &kp RET       &kp BSPC
 			>;
 		};
